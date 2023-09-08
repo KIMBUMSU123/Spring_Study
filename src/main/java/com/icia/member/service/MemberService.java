@@ -26,6 +26,17 @@ public class MemberService {
             return false;
         }
     }
+
+    public boolean login(MemberDTO memberDTO) {
+        // 이메일, 비밀번호 두 값 모두 일치하는 db 조회결과를 가져옴
+        // 이메일로 db에서 조회해서 서비스에 비밀번호를 서로 비교하여 일치하면 로그인 성공
+        MemberDTO dto = memberRepository.login(memberDTO);
+        if(dto !=null){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }
 
 
