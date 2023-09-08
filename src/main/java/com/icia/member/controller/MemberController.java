@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 @Controller
 public class MemberController {
@@ -40,5 +41,10 @@ public class MemberController {
         return "memberLogin";
         }
     }
-
+    @GetMapping("/members")
+    public String findAll(Model model) {
+        List<MemberDTO> memberDTOList = memberService.findAll();
+        model.addAttribute("memberList", memberDTOList);
+        return "memberList";
+    }
 }
