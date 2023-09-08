@@ -5,6 +5,6 @@
     <link rel="stylesheet" href="/resources/css/main.css">
 </head>
 <body>
-<a href="memberSave.jsp">회원가입</a>
+<a href="/save">회원가입</a>
 </body>
 </html>
